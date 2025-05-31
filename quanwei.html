@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桂林釉陶文化馆 - 权威认证</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c6e49;
+            --secondary-color: #4c956c;
+            --bg-color: #ffffff;
+            --light-bg: #f1f7ed;
+            --text-color: #333333;
+            --light-text: #666666;
+            --border-color: #dce4d8;
+            --accent-color: #d4a017; /* 新增与其他页面一致的强调色 */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23f1f7ed" stroke-width="0.5"/></svg>');
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 头部横幅（与其他页面统一） */
+        .top-banner {
+            width: 100vw;
+            height: 240px;
+            background: linear-gradient(135deg, var(--secondary-color) 40%, var(--primary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-banner::before { /* 补充伪元素背景图 */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+
+        .banner-title {
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.2em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3em 1.5em;
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .banner-subtitle { /* 新增副标题，与其他页面一致 */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1em;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+        }
+
+        /* 导航栏（与其他页面统一） */
+        nav {
+            background: var(--bg-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scroll { /* 滚动时的半透明背景 */
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link { /* 补充图标和悬停动画 */
+            color: var(--text-color);
+            font-size: 1.1em;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* 图标与文字间距 */
+            position: relative;
+        }
+
+        .nav-link.active, 
+        .nav-link:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(44, 110, 73, 0.3);
+        }
+
+        .nav-link::after { /* 下划线动画 */
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link i { /* 新增图标样式 */
+            font-size: 1.2em;
+        }
+
+        /* 主要内容区 */
+        .main-section {
+            margin: 40px auto;
+            background: var(--light-bg);
+            border-radius: 24px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+            padding: 50px 40px;
+            position: relative;
+        }
+        
+        .main-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(to bottom right, rgba(44, 110, 73, 0.03), transparent);
+            z-index: -1;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(44, 110, 73, 0.3);
+            display: inline-block;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.4em;
+            margin: 25px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        .process-step {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        
+        .feature-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .work-case {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .case-item {
+            flex: 1 1 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .case-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* 返回顶部按钮 */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(44, 110, 73, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        #back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 1em;
+            margin: 60px 0 30px 0;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer span {
+            font-size: 0.9em;
+            color: var(--light-text);
+            display: block;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            .main-section {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+            
+            .top-banner {
+                height: 200px;
+            }
+            
+            .banner-title {
+                font-size: 2em;
+                padding: 0.2em 1em;
+            }
+            
+            nav {
+                padding: 10px 0;
+            }
+            
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 1em;
+            }
+            
+            .work-case {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .banner-title {
+                font-size: 1.8em;
+            }
+            
+            .nav-container {
+                gap: 15px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div class="banner-title">权威认证</div>
+        <div class="banner-subtitle">桂林釉陶官方认证信息</div> <!-- 新增副标题 -->
+    </div>
+    <nav>
+        <div class="nav-container">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> 首页</a> <!-- 新增图标 -->
+            <a class="nav-link" href="tanyuan.html"><i class="fas fa-search"></i> 探源非遗</a>
+            <a class="nav-link" href="zhuanshu.html"><i class="fas fa-palette"></i> 专属定制</a>
+            <a class="nav-link" href="chuanxin.html"><i class="fas fa-hands"></i> 传新展艺</a>
+            <a class="nav-link active" href="quanwei.html"><i class="fas fa-award"></i> 权威认证</a> <!-- 新增图标 -->
+        </div>
+    </nav>
+    <div class="container">
+        <section class="main-section">
+			<div style="text-align: center; margin: 40px 0; padding: 30px; background: #f9f9f9; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: none;">与观志窑工作室合作</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <!-- 修正路径后的img标签 -->
+        <img src=".\images\合照.png" 
+             alt="观志窑工作室" 
+             style="max-width: 200%; height: auto; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1);" />
+        <div style="max-width: 800px; text-align: left;">
+            <p><strong>观志窑工作室</strong>是桂林釉陶非遗技艺的重要传承基地，由省级非遗传承人陈施淼领衔，与桂林釉陶文化馆达成长期战略合作。</p>
+            <p>双方于2018年联合创立"58法现代制作流程"研发项目，结合观志窑30余年的制陶经验与现代工艺标准，将传统釉陶技艺系统化、标准化，最终形成58项细分操作规范。</p>
+            <p>合作期间，观志窑工作室提供了宋代古窑遗址的考古数据、传统釉料配方文献，并派遣资深匠人参与流程设计，确保现代工艺与传统技艺的有机融合。</p>
+        </div>
+    </div>
+</div>
+			 <h3>代表作品案例</h3>
+            <div class="work-case">
+                <div class="case-item">
+                    <div class="case-title">《桂林山水杯》</div>
+                    <p>该作品采用58法工艺制作，融入桂林山水纹样，器型优雅，釉色自然。2020年12月26日被桂林八荒锦绣美术馆收藏。</p>
+                </div>
+                <div class="case-item">
+                    <div class="case-title">《切面原矿陶杯》</div>
+                    <p>作品展现原矿陶釉的自然肌理，通过多层施釉与窑变工艺形成独特的切面效果，2020年12月26日被桂林八荒锦绣美术馆收藏。</p>
+                </div>
+            </div>
+			 <!-- 新增：馆藏记录模块 -->
+    <div style="margin: 40px 0; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.05);">
+        <h2 style="color: var(--primary-color); margin-bottom: 30px; border-bottom: none;">馆藏记录</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- 第一张收藏证书 -->
+            <div style="text-align: center; transition: transform 0.3s ease; cursor: pointer;">
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px;">
+                    <img src=".\images\《桂林山水杯》收藏证书.jpg"
+                         alt="《桂林山水杯》收藏证书" 
+                         style="width: 100%; height: auto; display: block;" />
+                </div>
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">《桂林山水杯》收藏证书</h3>
+                <p style="font-size: 0.95em; color: var(--light-text);">
+                    陈施淼、伍玉彬、窦胜可创作的陶瓷作品《桂林山水杯》于2020年12月26日被桂林八荒锦绣美术馆收藏，彰显了58法工艺的艺术价值。
+                </p>
+            </div>
+            
+            <!-- 第二张收藏证书 -->
+            <div style="text-align: center; transition: transform 0.3s ease; cursor: pointer;">
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px;">
+                    <img src=".\images\《切面原矿陶杯》收藏证书.jpg"
+                         alt="《切面原矿陶杯》收藏证书" 
+                         style="width: 100%; height: auto; display: block;" />
+                </div>
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">《切面原矿陶杯》收藏证书</h3>
+                <p style="font-size: 0.95em; color: var(--light-text);">
+                    窦胜可、陈施淼、伍玉彬创作的《切面原矿陶杯》于2020年12月26日被桂林八荒锦绣美术馆收藏，体现了58法工艺在现代创新中的成果。
+                </p>
+            </div>
+        </div>
+    </div>
+            <h2>桂林釉陶58法现代制作流程</h2>
+            <p>桂林釉陶"58法现代制作流程"由省级非遗传承人陈施淼于2017年制定，融合传统技艺与现代工艺标准，将制作过程细化为58项标准化操作步骤。以下为核心流程解析：</p>
+            
+            <h3>一、原料制备与处理（约8-10法）</h3>
+            <div class="process-step">
+                <p><strong>陶土甑选</strong>：选取桂林尧山地区特有的高钙弱碱性陶土，通过风化、浸泡、淘洗等步骤去除杂质，保留含铁矿物质，确保土质疏松多孔的特性。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>矿釉采集与配比</strong>：采用桂林喀斯特地貌特有的矿物（如方解石、石英等）配制釉料，恢复宋代铁锈花、月白釉等20余种古釉配方，并通过实验调整矿釉比例实现窑变效果。</p>
+            </div>
+            
+            <h3>二、造型设计与塑型（约12-15法）</h3>
+            <div class="process-step">
+                <p><strong>手工拉坯</strong>：使用传统拉坯机塑形，通过手部力度与转盘速度配合，塑造杯、壶、罐等器型，强调器壁厚薄均匀。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>模具印坯与修坯</strong>：复杂器型采用印模辅助成型，结合利坯刀精细修整，确保器型线条流畅，底部平整度达标。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>创新器型开发</strong>：结合现代审美设计茶具、摆件等，融入桂林山水纹样或几何元素，并通过3D建模验证结构合理性。</p>
+            </div>
+            
+            <h3>三、釉料制备与施釉（约10-12法）</h3>
+            <div class="process-step">
+                <p><strong>生釉调配</strong>：按"58法"标准将矿物原料研磨至特定粒度，混合草木灰或金属氧化物，调配出黑釉、玳瑁釉等色彩。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>多层施釉工艺</strong>：采用浸釉、喷釉、刷釉结合的方式，控制釉层厚度与分布，部分釉色需多次施釉并阴干。</p>
+            </div>
+            
+            <h3>四、窑烧工艺（约15-18法）</h3>
+            <div class="process-step">
+                <p><strong>装窑与窑位设计</strong>：根据器型大小和釉色需求分层摆放，利用窑炉不同区域的温差实现釉色自然过渡。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>12阶段还原焰烧制</strong>：采用自主研发的复合窑炉，分12个阶段调控温度（最高1250°C）与氧气含量，通过强还原气氛促使釉面金属氧化物显色，形成色古自然的纹理。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>冷却与窑变控制</strong>：缓慢降温至800°C以下，利用桂林陶土含钙特性形成微孔结构，并通过窑变技术使釉色呈现随机山水画效果。</p>
+            </div>
+            
+            <h3>五、质量检测与创新（约8-10法）</h3>
+            <div class="process-step">
+                <p><strong>成品检验</strong>：检查胎体密度、釉面完整性及吸水率，剔除变形或开裂品。</p>
+            </div>
+            <div class="process-step">
+                <p><strong>专利与文创开发</strong>：结合现代需求改进工艺，如研发"漓江山水原矿茶具"等获国家专利的实用器型。</p>
+            </div>
+            
+            <h3>流程核心特点</h3>
+            <div class="feature-box">
+                <div class="feature-title"><i class="fas fa-link"></i> 传统与科技结合</div>
+                <p>保留手工拉坯、古釉配方等传统技艺，同时引入气窑控温、矿物成分分析等现代技术。</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title"><i class="fas fa-project-diagram"></i> 标准化操作</div>
+                <p>每项步骤均制定量化指标（如釉料研磨细度、烧制升温曲线），确保成品稳定性。</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title"><i class="fas fa-leaf"></i> 生态材料利用</div>
+                <p>100%采用桂林本地陶土与矿物，减少化学添加剂，符合环保理念。</p>
+            </div>
+            
+           
+            
+            <p>如需完整58项细分步骤，可参考陈施淼团队制定的《桂林釉陶58法现代制作流程》标准文件。</p>
+        </section>
+    </div>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top">↑</button>
+    
+    <div class="footer">
+        <p>© 2024 桂林釉陶文化馆</p>
+        <span>数据来源：甑皮岩考古博物馆</span>
+    </div>
+    <script>
+        // 返回顶部按钮逻辑
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 导航栏滚动效果
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                nav.classList.add('scroll');
+            } else {
+                nav.classList.remove('scroll');
+            }
+        });
+        
+        // 设置当前活动导航链接
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath || 
+                    (currentPath.includes(link.getAttribute('href')) && currentPath !== '/')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
